@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment from Task 14.3 to 20</title>
+        <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .card-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            width: 200px;
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 6px;
+            text-align: center;
+            background-color:lavender;
+        }
+
+
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .card {
+            width: 200px;
+            border: 1px solid #444;
+            padding: 10px;
+            border-radius: 6px;
+            background-color: rosybrown;
+        }
+
+       </style> 
+
+</head>
+<body>
+
+    <!---  14.3 Create a method to add background color to a DIV element  --->
+<div id="myDiv" style="width:200px; height:100px; border:1px solid black;">
+    This is a div
+</div>
+<button onclick="changeDivColor()">Change Color</button>
+
+<br><br>
+<hr>
+     <!--   14.4. Write a function to generate random background color of body  -->
+<button onclick="randomBg()">Change Background</button>
+
+    <!---  14.5. Onload of webpage, display modal (Bootstrap 4/5)   -->
+<body onload="openModal()">
+  <!-- Bootstrap Modal -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title">Welcome Message</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <p>Hello! This modal appears automatically when the page loads.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+<br><br><hr>
+<!---    15.1. Check whether the given number is a multiple of 3 or not ---->
+<h3>Check Multiple of 3</h3>
+<button onclick="checkMultiple()">Check Number</button>
+<p id="result"></p>
+
+<br><hr>
+<!---   15.2. Check whether a particular sub-word exists in a string or not    --->
+<h3>Substring Check</h3>
+<button onclick="checkWord()">Check</button>
+<p id="answer"></p>
+
+<br><hr>
+
+
+<!--   15.3. calculate complex interest ((p/r )* t) / 100 ): take principle, rate and time
+ from user   -->
+<h3>Calculate Interest</h3>
+
+<input id="p" placeholder="Principle"><br><br>
+<input id="r" placeholder="Rate"><br><br>
+<input id="t" placeholder="Time"><br><br>
+
+<button onclick="calculate()">Calculate</button>
+<p id="ans"></p>
+
+<br><hr>
+
+
+<!--  16.1. Display even numbers up to n (user input)    -->
+<h3>Even Numbers</h3>
+<input id="num" placeholder="Enter number">
+<button onclick="showEven()">Display</button>
+<p id="evenOut"></p>
+<br><hr>
+
+
+<!--- 16.2. Check whether a character is vowel or consonant   --->
+<h3>Vowel or Consonant</h3>
+<input id="char" placeholder="Enter character">
+<button onclick="checkChar()">Check</button>
+<p id="outChar"></p>
+<br><hr>
+
+<!-- 16.3. Count even and odd numbers from 1 to 999  -->
+<h3>Even & Odd Count</h3>
+<button onclick="count()">Count</button>
+<p id="countOut"></p>
+
+<br><hr>
+
+<!--  16.4. Count occurrence of a character in a string  -->
+<h3>Character Count</h3>
+<button onclick="findCount()">Check</button>
+<p id="countResult"></p>
+
+<br><hr>
+
+<!--  16.5. Find sum and average of array elements  -->
+<h3>Sum & Average</h3>
+<button onclick="calculate()">Calculate</button>
+<p id="sumAvg"></p>
+
+<br><hr>
+
+
+<!--  16.6. Find the largest number in an array (using loop)  -->
+<h3>Largest Number</h3>
+<button onclick="largest()">Find</button>
+<p id="largeOut"></p>
+
+<br><hr>
+
+<!--   17: Display 3 cards in a row through js -->
+<h3>Display Cards Using JavaScript</h3>
+<button onclick="createCards()">Show Cards</button>
+
+<div id="cards" class="card-container"></div>
+
+<br><hr>
+
+
+<!--   18: create a form and validate it: email, contact, name, age,designation,select multiple files, DOB and submit form -->
+<h3>Employee Registration Form</h3>
+
+<form onsubmit="return validateForm()">
+
+    Name:<br>
+    <input type="text" id="name">
+    <span id="nameErr"></span><br>
+
+    Email:<br>
+    <input type="text" id="email">
+    <span id="emailErr"></span><br>
+
+    Contact:<br>
+    <input type="text" id="contact">
+    <span id="contactErr"></span><br>
+
+    Age:<br>
+    <input type="number" id="age">
+    <span id="ageErr"></span><br>
+
+    Designation:<br>
+    <select id="designation">
+        <option value="">Select</option>
+        <option>Developer</option>
+        <option>Tester</option>
+        <option>Manager</option>
+    </select>
+    <span id="desErr"></span><br>
+
+    Date of Birth:<br>
+    <input type="date" id="dob">
+    <span id="dobErr"></span><br>
+
+    Upload Files:<br>
+    <input type="file" id="files" multiple>
+    <span id="fileErr"></span><br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<br><hr>
+
+<!---   19.1 Look for an API and display movie records as cards in UI   ---->
+<h3>Movie Records</h3>
+<button onclick="loadMovies()">Load Movies</button>
+
+<div id="movies" class="container"></div>
+
+<br><hr>
+
+<!--    19.2 Create a function to get data from user and display it using callback   -->
+<h3>Callback Function Example</h3>
+
+<input id="username" placeholder="Enter your name">
+<button onclick="getData()">Submit</button>
+
+<p id="output"></p>
+
+<br><hr>
+
+<!---   20.1 Get the first element in an array that is greater than 20    -->
+<h3>First value greater than 20</h3>
+<button onclick="greaterThan20()">Check</button>
+<p id="g20"></p>
+
+<br><hr>
+
+<!--   20.2 Get the first e<h3>First value less than 20 --->
+<h3>First value less than 20</h3>
+<button onclick="lessThan20()">Check</button>
+<p id="l20"></p>
+
+<br><hr>
+
+
+<!---  20.3 Filter data based on ID in array of objects   --->
+<h3>Filter Object by ID</h3>
+<button onclick="filterById()">Filter</button>
+<p id="objOut"></p>
+
+<br><hr>
+
+<!---  20.4 Check elements are odd or even in array [90, 89, 56, 45]   -->
+<h3>Odd or Even Check</h3>
+<button onclick="oddEven()">Check</button>
+<p id="oe"></p>
+
+<br><hr>
+
+<!--   20.5 Create a class Book      -->
+<h3>Book Class</h3>
+<button onclick="bookInfo()">Show</button>
+<p id="book"></p>
+
+<br><hr>
+
+
+<!---  20.6 Create a class Animal -->
+<h3>Animal Class</h3>
+<button onclick="animalInfo()">Show</button>
+<p id="animal"></p>
+
+
+<br><hr>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./assignment.js" ></script>
+
+    <!-- Bootstrap 5 Bundle with Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
